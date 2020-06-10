@@ -44,3 +44,7 @@ while m < n:
     #return game
     print(d['name'])
     m += 1
+
+inp = input('enter q to quit')
+while inp != 'q':
+    inp = input('enter q to quit')
