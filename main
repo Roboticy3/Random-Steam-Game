@@ -1,0 +1,46 @@
+#6/9/2020
+#Pablo Ibarz
+#Random Game
+
+import json
+import random
+
+#empty list of ids
+ids = []
+
+#parse the steam data
+with open('v0001.json', encoding="utf-8") as a:
+    x = json.load(a)
+
+for a in x.values():
+    for b in a.values():
+        for c in b.values():
+            break
+
+for d in c:
+    for a, b in d.items():
+        if a == 'appid':
+            ids.append(b)
+
+n = input('how many games do you want?\t')
+while n.isdigit() == False:
+    n = input('please enter a number\t')
+m = 0
+n = int(n)
+
+while m < n:
+    #random id picker
+    r = ids[random.randint(0, len(ids))]
+
+    br = False
+    for d in c:
+        for a, b in d.items():
+            if b == r:
+                br = True
+                break
+        if br == True:
+            break
+
+    #return game
+    print(d['name'])
+    m += 1
