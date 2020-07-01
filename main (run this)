@@ -28,6 +28,9 @@ while n.isdigit() == False:
 m = 0
 n = int(n)
 
+#empty game list to avoid repeats
+g = []
+
 while m < n:
     #random id picker
     r = ids[random.randint(0, len(ids))]
@@ -42,8 +45,10 @@ while m < n:
             break
 
     #return game
-    print(d['name'])
-    m += 1
+    if d['name'] not in g:
+        print(d['name'] + "\t(url: https://store.steampowered.com/app/" + str(d['appid']) + ")")
+        g.append([d['name'], d['appid']])
+        m += 1
 
 inp = input('enter q to quit')
 while inp != 'q':
